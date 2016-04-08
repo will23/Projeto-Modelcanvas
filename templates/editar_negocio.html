@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Editar Negocio</title>
+    <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/media/css/bootstrap.css" rel="stylesheet" media="screen and (min-width:801px)">
+    <link href="/media/css/bootstrap-mobi.css" rel="stylesheet" media="handheld, screen and (max-width:767px)">
+    <link href="/media/css/bootstrap-tab.css" rel="stylesheet" media="screen and (min-width:768px) and (max-width:1280px)">
+  
+
+    <script type="text/javascript">
+		function getConfirmation(){
+			var retVal = confirm("Você está certo disso?");
+				if(retVal == true){
+					alert("Projeto alterado com sucesso!");
+					return true;
+				}else{
+					alert ("Projeto não alterado!");
+					return false;
+				}
+		}
+	</script>
+  </head>
+  <body>	
+        <div class="content"> 
+                <div class="header">
+               		Editar Negócio </div>
+                	<bt>
+                    	<bt-home><a href="/"><img src="/media/img/home.png" width="26" height="26"></a></bt-home>
+                        <bt-menu><a href="/listar_negocio/"><img src="/media/img/menu.png" width="25" height="25"></a></bt-menu>
+                    </bt>
+                    <bt-add><a href="/novo_negocio/"><img src="/media/img/add.png" width="25" height="25"></a> </bt-add>
+                <div class="cor1">
+                <form class="form-horizontal" method="POST" action="{{ action }}">
+				{% csrf_token %}
+                      <div class="control-group"></br><input type="hidden" value="{{ negocio.nome }}"class="input-large"  id="id_nome" name="nome">
+                      <input type="hidden" class="input-small" value="{{ negocio.autor }}" id="id_autor" name="autor">
+                      <!-- <input type=" date" class="input-small" placeholder="Data"></div> -->
+                      <div class="left">Proposta de Valor</div>
+                      <div><textarea rows="7"  id="id_proposta_valor" name="proposta_valor">{{ negocio.proposta_valor }}</textarea>
+                      <img src="/media/img/info-.png" id="img-" width="25" height="25" onClick='alert("Que valor proporciona a seus clientes? Que problemas de seus clientes estão solucionados? ")'>
+					  </div></div>
+				</div>
+                <script src="http://code.jquery.com/jquery-latest.js"></script>
+                <script src="/media/js/bootstrap.min.js"></script>
+                <div class="accordion" id="accordion2">
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-red" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                        Parceiros Chave
+                      </a>
+                    </div>
+                    <div id="collapseOne" class="accordion-body collapse">
+                      <div class="accordion-inner" id="id_parceiro_chave">
+							<img src="/media/img/info.png" id="img" width="25" height="25" onClick='alert("Quem são seus parceiros e provedores fundamentais?")'>
+                        <div><textarea rows="7" value="{{ negocio.parceiros_chave }}" id="id_parceiros_chave" name="parceiros_chave" class="box_text" maxlength="80">{{ negocio.parceiros_chave }}</textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-red" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                        Atividades Chave</a>
+                    </div>
+                    <div id="collapseTwo" class="accordion-body collapse">
+                      <div class="accordion-inner">
+							<img src="/media/img/info.png" id="img" width="25" height="25" onClick='alert("Quem são seus parceiros e provedores fundamentais?")'>
+                        <div><textarea rows="7" value="{{ negocio.atividades_chave }}" id="id_atividades_chave" name="atividades_chave" class="box_text" maxlength="80">{{ negocio.atividades_chave }}</textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div id="collapseOne" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        <div><textarea rows="7" id="id_proposta_valor" class="box_text" maxlength="80"></textarea>
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-red" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                        Recursos Chave</a>
+                    </div>
+                    <div id="collapseThree" class="accordion-body collapse">
+                      <div class="accordion-inner">
+							<img src="/media/img/info.png" id="img" width="25" height="25" onClick='alert("Quem são seus parceiros e provedores fundamentais?")'>
+                        <div><textarea rows="7" value="{{ negocio.recursos_chave }}" id="id_recursos_chave" name="recursos_chave" class="box_text" maxlength="80">{{ negocio.recursos_chave }}</textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="accordion-group">
+                    <div class="accordion-heading"></div>
+                    <div id="collapseThree" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                       <div><textarea rows="7" id="id_proposta_valor" class="box_text" maxlength="80"></textarea>
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-blue" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                        Relacionamento com Clientes</a>
+                    </div>
+                    <div id="collapseFour" class="accordion-body collapse">
+                      <div class="accordion-inner">
+						<img src="/media/img/info.png" id="img" width="25" height="25" onClick='alert("Quem são seus parceiros e provedores fundamentais?")'>
+                        <div><textarea rows="7" value="{{ negocio.relacionamento_clientes }}" id="id_relacionamento_clientes" name="relacionamento_clientes" class="box_text" maxlength="80">{{ negocio.relacionamento_clientes }}</textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-blue" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+                        Segmentos de Clientes</a>
+                    </div>
+                    <div id="collapseFive" class="accordion-body collapse">
+                      <div class="accordion-inner">
+							<img src="/media/img/info.png" id="img" width="25" height="25" onClick='alert("Quem são seus parceiros e provedores fundamentais?")'>
+                        <div><textarea rows="7" value="{{ negocio.segmentos_clientes }}" id="id_segmentos_clientes" name="segmentos_clientes" class="box_text" maxlength="80">{{ negocio.segmentos_clientes }}</textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-blue" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+                        Canais</a>
+                    </div>
+                    <div id="collapseSix" class="accordion-body collapse">
+                      <div class="accordion-inner">
+							<img src="/media/img/info.png" id="img" width="25" height="25" onClick='alert("Quem são seus parceiros e provedores fundamentais?")'>
+                        <div><textarea rows="7" value="{{ negocio.canais }}" id="id_canais" name="canais" class="box_text" maxlength="80">{{ negocio.canais }}</textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-green" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
+                        Estrutura de Custos</a>
+                    </div>
+                    <div id="collapseSeven" class="accordion-body collapse">
+                      <div class="accordion-inner">
+							<img src="/media/img/info.png" id="img" width="25" height="25" onClick='alert("Quem são seus parceiros e provedores fundamentais?")'>
+                        <div><textarea rows="7" value="{{ negocio.estrutura_custos }}" id="id_estrutura_custos" name="estrutura_custos" class="box_text" maxlength="80">{{ negocio.estrutura_custos }}</textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-green" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">
+                        Fontes de Receita</a>
+                    </div>
+                    <div id="collapseEight" class="accordion-body collapse">
+                      <div class="accordion-inner">
+							<img src="/media/img/info.png" id="img" width="25" height="25" onClick='alert("Quem são seus parceiros e provedores fundamentais?")'>
+                        <div><textarea rows="7" value="{{ negocio.fontes_receita }}" id="id_fontes_receita" name="fontes_receita" class="box_text" maxlength="80">{{ negocio.fontes_receita }}</textarea>
+                      </div>
+                    </div>
+                  </div>
+					 <div class="all"><button type="submit" class="btn-">Concluir</button></div>
+                </form>
+          
+           <div class="span4"><img src="/media/img/logo_firjan.png" width="284" height="58"></div>    
+      		 </div>  
+           </div>
+    </div>
+  </body>
+</html>

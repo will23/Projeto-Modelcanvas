@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Listar Negócio</title>
+    <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/media/css/bootstrap.css" rel="stylesheet" media="screen and (min-width:801px)">
+    <link href="/media/css/bootstrap-mobi.css" rel="stylesheet" media="handheld, screen and (max-width:767px)">
+    <link href="/media/css/bootstrap-tab.css" rel="stylesheet" media="screen and (min-width:768px) and (max-width:1280px)">
+  </head>
+  <body>
+      
+	  <div class="content_card">
+       <center>
+       </br>
+		    {% for negocio in negocios %}   
+           <div class="card"> 		     
+         	 <a href="/exibir_negocio/{{ negocio.id }}/"><h3><strong>{{ negocio.nome }}</strong></h3>
+                <p>{{ negocio.autor }}</p>
+                <h4>{{ negocio.criado|date:"SHORT_DATE_FORMAT" }}
+				<a href="/excluir_negocio/{{negocio.id }}/" onClick="alert('Projeto excluído com sucesso')"><img src="/media/img/recycle2.png" width="20" height="20" align="right"></a></h4> 
+            	 								
+          </div>
+          
+			{% endfor %}
+        
+  	   </center>
+     </div>
+   
+  </body>
+</html>

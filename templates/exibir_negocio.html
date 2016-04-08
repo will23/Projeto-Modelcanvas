@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/media/css/bootstrap.css" rel="stylesheet" media="screen and (min-width:801px)">
+    <link href="css/bootstrap-mobi.css" rel="stylesheet" media="handheld, screen and (max-width:767px)">
+    <link href="css/bootstrap-tab.css" rel="stylesheet" media="screen and (min-width:768px) and (max-width:1280px)">
+  </head>
+  <body>
+        <div class="content"> 
+        
+        <div class="header">
+               		{{negocio.nome|upper}} </div>
+                	<bt>
+                    	<bt-home><a href="/"><img src="/media/img/home.png" width="26" height="26"></a></bt-home>
+                        <bt-menu><a href="/listar_negocio/"><img src="/media/img/menu.png" width="25" height="25"></a></bt-menu>
+                    </bt>
+                    <bt-add><a href="/novo_negocio/"><img src="/media/img/add.png" width="25" height="25"></a> </bt-add>
+        
+                <div class="cor1">
+                  <div class="float font"><strong>Nome do autor:</strong> {{ negocio.autor}}</div>
+                  <!-- <div class="font-"><strong>Data:</strong> xx/xx/xxxx</div> -->
+               <div class="left">Proposta de Valor: <p>{{negocio.proposta_valor}}</p></div>
+                <button type="submit" class="btn-">Editar</button>
+               <!-- <div class="box font">Conteúdo inserido anteriormente</div> -->
+                </div>
+                <script src="http://code.jquery.com/jquery-latest.js"></script>
+                <script src="/media/js/bootstrap.min.js"></script>
+                <div class="accordion" id="accordion2">
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-red" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                        Parceiros Chave
+                      </a>
+                    </div>
+                    <div id="collapseOne" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        {{negocio.parceiros_chave}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-red" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                        Atividades Chave</a>
+                    </div>
+                    <div id="collapseTwo" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        {{negocio.atividades_chave}}
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div id="collapseOne" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        Anim pariatur cliche...
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-red" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                        Recursos Chave</a>
+                    </div>
+                    <div id="collapseThree" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        {{negocio.recursos_chave}}
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="accordion-group">
+                    <div class="accordion-heading"></div>
+                    <div id="collapseThree" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        Anim pariatur cliche...
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-blue" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                        Relacionamento com Clientes</a>
+                    </div>
+                    <div id="collapseFour" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        {{negocio.relacionamento_clientes}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-blue" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+                        Segmentos de Clientes</a>
+                    </div>
+                    <div id="collapseFive" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        {{negocio.segmentos_clientes}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-blue" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+                        Canais</a>
+                    </div>
+                    <div id="collapseSix" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        {{negocio.canais}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-green" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
+                        Estrutura de Custos</a>
+                    </div>
+                    <div id="collapseSeven" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        {{negocio.estrutura_custos}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle-green" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">
+                        Fontes de Receita</a>
+                    </div>
+                    <div id="collapseEight" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        {{negocio.fontes_receita}}
+                      </div>
+                    </div>
+                  </div>
+               
+          
+           <div class="span4"><img src="/media/img/logo_firjan.png" width="284" height="58"></div>    
+      		 </div>  
+           </div>
+    </div>
+  
+  </body>
+</html>

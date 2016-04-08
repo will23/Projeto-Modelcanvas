@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link href="/media/css/bootstrap.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+  <div class="container-special">
+        <div class="content-special"> 
+            <div class="title">
+                <h2>MODEL CANVAS APP</h2>
+                <script src="http://code.jquery.com/jquery-latest.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+           
+		     <form action="/novo_negocio/" method="POST" >
+				{% csrf_token %}
+				{{ form }}
+				<input type="submit" value="salvar" />
+			 </form>
+      		 <div class="span4"><img src="/media/img/logo_firjan.png" width="284" height="58">
+        </div>  
+    </div>
+ </div>
+  </body>
+</html>
